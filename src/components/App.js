@@ -1,26 +1,43 @@
-import React from "react";
-import Accordion from "./Accordion";
-import Search from "./Search";
+import React, { useState } from "react";
+//import DropDown from "./DropDown";
+//import Accordion from "./Accordion";
+//import Search from "./Search";
+import Tranlate from "./Translate";
 
-const items = [
+// const items = [
+//   {
+//     title: "What is React?",
+//     content: "React is a JavaScript Frontend Framework.",
+//   },
+//   {
+//     title: "Why use React?",
+//     content: "React is a JS library among engineers.",
+//   },
+//   {
+//     title: "How do you use  React?",
+//     content: "React is use by creating components.",
+//   },
+// ];
+
+const options = [
   {
-    title: "What is React?",
-    content: "React is a JavaScript Frontend Framework.",
+    label: "The Color Red",
+    value: "red",
   },
   {
-    title: "Why use React?",
-    content: "React is a JS library among engineers.",
+    label: "The Color Green",
+    value: "green",
   },
   {
-    title: "How do you use  React?",
-    content: "React is use by creating components.",
+    label: "A Shade of Blue",
+    value: "blue",
   },
 ];
 
 export default () => {
   return (
     <div>
-      <Search />
+      <Tranlate />
     </div>
   );
 };
