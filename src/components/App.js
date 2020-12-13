@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-//import DropDown from "./DropDown";
-//import Accordion from "./Accordion";
-//import Search from "./Search";
-import Tranlate from "./Translate";
+import Accordion from "./Accordion";
+import DropDown from "./DropDown";
+import Search from "./Search";
+import Translate from "./Translate";
+import Route from "./Route";
+import Header from "./Header";
 
-// const items = [
-//   {
-//     title: "What is React?",
-//     content: "React is a JavaScript Frontend Framework.",
-//   },
-//   {
-//     title: "Why use React?",
-//     content: "React is a JS library among engineers.",
-//   },
-//   {
-//     title: "How do you use  React?",
-//     content: "React is use by creating components.",
-//   },
-// ];
+const items = [
+  {
+    title: "What is React?",
+    content: "React is a JavaScript Frontend Framework.",
+  },
+  {
+    title: "Why use React?",
+    content: "React is a JS library among engineers.",
+  },
+  {
+    title: "How do you use  React?",
+    content: "React is use by creating components.",
+  },
+];
 
 const options = [
   {
@@ -34,10 +36,30 @@ const options = [
   },
 ];
 
-export default () => {
+const App = () => {
+  const [Selected, setSelected] = useState(options[0]);
   return (
     <div>
-      <Tranlate />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <DropDown
+          label="Select a color"
+          options={options}
+          selected={Selected}
+          onSelectedChange={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
+
+export default App;
